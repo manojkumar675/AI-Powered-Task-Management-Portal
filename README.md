@@ -2,6 +2,10 @@
 
 A full-stack task management application with AI-powered task generation, blockchain-style audit trails, and a modern dark-themed UI.
 
+### 🌐 Live Demo
+- **Frontend:** [https://ai-powered-task-management-portal-eight.vercel.app](https://ai-powered-task-management-portal-eight.vercel.app)
+- **Backend API:** [https://ai-powered-task-management-portal-ocoz.onrender.com/api](https://ai-powered-task-management-portal-ocoz.onrender.com/api)
+
 ---
 
 ## Features
