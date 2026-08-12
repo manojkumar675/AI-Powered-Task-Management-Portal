@@ -8,7 +8,7 @@ A full-stack task management application with AI-powered task generation, blockc
 
 - 🔐 **JWT Authentication** — Secure login & registration with BCrypt password hashing
 - 📋 **Task Management** — Full CRUD with pagination, filtering, sorting, and search
-- 🤖 **AI Task Generation** — Google Gemini 2.5 Flash generates descriptions, priorities, and effort estimates
+- 🤖 **AI Task Generation** — Google Gemini 3.5 Flash generates descriptions, priorities, and effort estimates
 - 🔗 **Blockchain Audit Trail** — SHA-256 hash-chained immutable task history with integrity verification
 - 📊 **Dashboard** — Real-time statistics with completion tracking and overdue alerts
 - 🎨 **Modern UI** — Dark theme with glassmorphism, animations, and responsive design
@@ -23,7 +23,7 @@ A full-stack task management application with AI-powered task generation, blockc
 | Backend | Java 21, Spring Boot 3.3, Spring Security, Spring Data JPA, Flyway |
 | Frontend | React 18, Vite, Tailwind CSS, React Router v6, Axios, React Hook Form |
 | Database | PostgreSQL 16 |
-| AI | Google Gemini 2.5 Flash API (with deterministic fallback) |
+| AI | Google Gemini 3.5 Flash API (with deterministic fallback) |
 | Docs | Swagger / OpenAPI 3 |
 | Testing | JUnit 5, Mockito, Testcontainers |
 | Deployment | Docker, Docker Compose |
@@ -135,7 +135,7 @@ After starting the backend, visit: `http://localhost:8080/swagger-ui.html`
 ```mermaid
 flowchart LR
     A[User enters title] --> B{Gemini API available?}
-    B -->|Yes| C[Call Gemini 2.5 Flash]
+    B -->|Yes| C[Call Gemini 3.5 Flash]
     C --> D{Valid response?}
     D -->|Yes| E[Return AI-generated details]
     D -->|No| F[Use fallback rules]
