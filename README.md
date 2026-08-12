@@ -313,8 +313,18 @@ docker compose -f docker-compose.yml up -d --build
 
 ## Screenshots
 
-> *Screenshots placeholder — add screenshots of Dashboard, Task List, Create Task with AI, and Blockchain History pages.*
+### Dashboard
+![Dashboard](./assets/dashboard.png)
+
+### Task List
+![Task List](./assets/task_list.png)
+
+### Create Task (with AI Generation)
+![Create Task](./assets/create_task.png)
+
+### Blockchain Audit Trail
+![Blockchain History](./assets/blockchain.png)
 
 ## Demo Video
 
-> *Demo video placeholder — record a walkthrough of the complete application flow.*
+> *Demo video placeholder — Record and upload a 3-5 minute walkthrough of the complete application flow (Authentication, Task CRUD, AI generation, and Blockchain verification) to Google Drive, then link it here.*
