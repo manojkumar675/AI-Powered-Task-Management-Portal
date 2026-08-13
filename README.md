@@ -7,6 +7,8 @@ A full-stack task management application with AI-powered task generation, blockc
 - **Backend API (Render):** [https://ai-powered-task-management-portal-ocoz.onrender.com/api](https://ai-powered-task-management-portal-ocoz.onrender.com/api)
 - **Database (Render):** Managed PostgreSQL 16 instance
 
+> **Note on Initial Load:** The backend is hosted on a free Render instance which spins down after 15 minutes of inactivity. **Please allow up to 50 seconds** for the server to wake up during your first login or page refresh.
+
 ---
 
 ## Features
@@ -37,50 +39,22 @@ A full-stack task management application with AI-powered task generation, blockc
 
 ## Architecture
 
-```mermaid
-graph TB
-    subgraph Frontend["Frontend (React + Vite)"]
-        UI[Pages & Components]
-        CTX[Auth Context]
-        AX[Axios Client]
-    end
+The application follows a modern decoupled architecture.
 
-    subgraph Backend["Backend (Spring Boot)"]
-        AUTH[Auth Controller]
-        TASK[Task Controller]
-        DASH[Dashboard Controller]
-        AIC[AI Controller]
-        BC[Blockchain Controller]
-        
-        AS[Auth Service]
-        TS[Task Service]
-        DS[Dashboard Service]
-        AIS[AI Service]
-        ALS[Audit Log Service]
-        
-        JWT[JWT Provider]
-        GEM[Gemini AI Provider]
-        FB[Fallback AI Provider]
-    end
+### 💻 Frontend Layer (React + Vite)
+- **Pages & Components:** Built with Tailwind CSS and React Router.
+- **State Management:** React Context API for global Authentication and Toast notifications.
+- **API Client:** Axios interceptors automatically attach JWT tokens to secure requests.
 
-    subgraph Database["PostgreSQL"]
-        U[(users)]
-        T[(tasks)]
-        A[(task_audit_log)]
-    end
+### ⚙️ Backend Layer (Spring Boot)
+- **Controllers:** Expose RESTful endpoints (AuthController, TaskController, AIController, BlockchainController).
+- **Services:** Contain business logic, AI fallback strategies, and cryptographic hash chaining algorithms.
+- **Providers:** Interface with external services like the Google Gemini API.
+- **Security:** Spring Security filter chain with stateless session management and strict CORS policies.
 
-    UI --> AX --> AUTH & TASK & DASH & AIC & BC
-    AUTH --> AS --> JWT
-    TASK --> TS --> ALS
-    DASH --> DS
-    AIC --> AIS --> GEM & FB
-    BC --> ALS
-    
-    AS --> U
-    TS --> T
-    ALS --> A
-    DS --> T
-```
+### 🗄️ Data Layer (PostgreSQL)
+- **Entities:** JPA/Hibernate ORM mapping.
+- **Migrations:** Flyway automates database schema creation and initialization.
 
 ---
 
