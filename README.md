@@ -331,5 +331,6 @@ docker compose -f docker-compose.yml up -d --build
 ![Blockchain History](./assets/blockchain.png)
 
 ## Demo Video
+https://drive.google.com/file/d/18xXZldXstf3oHZs2gdtjpPqOzTAeRYdp/view?usp=sharing
 
-> *Demo video placeholder — Record and upload a 3-5 minute walkthrough of the complete application flow (Authentication, Task CRUD, AI generation, and Blockchain verification) to Google Drive, then link it here.*
+
