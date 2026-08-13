@@ -39,6 +39,32 @@ A full-stack task management application with AI-powered task generation, blockc
 
 ## Architecture
 
+```mermaid
+graph TD
+    subgraph Client ["Frontend (React + Vite)"]
+        UI[Pages & Components]
+        API[Axios Client]
+    end
+
+    subgraph Server ["Backend (Spring Boot)"]
+        REST[REST Controllers]
+        SVC[Business Services]
+        SEC[Spring Security & JWT]
+        AI[Gemini AI Provider]
+    end
+
+    subgraph DB ["PostgreSQL Database"]
+        DATA[(Tables: users, tasks, audit_log)]
+    end
+
+    UI --> API
+    API -->|HTTP Requests| REST
+    REST --> SEC
+    SEC --> SVC
+    SVC --> AI
+    SVC --> DATA
+```
+
 The application follows a modern decoupled architecture.
 
 ### 💻 Frontend Layer (React + Vite)
